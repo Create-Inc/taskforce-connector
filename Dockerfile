@@ -2,7 +2,7 @@ FROM node:14-alpine
 
 RUN apk --no-cache add curl
 
-RUN yarn global add --ignore-optional taskforce-connector pm2@3.5.2 && yarn cache clean
+RUN yarn global add --ignore-optional taskforce-connector pm2@5.2.0 && yarn cache clean
 
 CMD pm2-runtime taskforce --web 80 -- -n "${TASKFORCE_CONNECTION}" --team "${TASKFORCE_TEAM}"
 
